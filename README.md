@@ -9,5 +9,12 @@
 * 2.重启sshd
 
       service sshd restart
+## 2.增加用户
 
+## 3.软件安装
+### python
+### yum
+### 生信软件
+### R
+### openBLAS
     
