@@ -89,7 +89,12 @@
       cd lib
       mv libRblas.so libRblas.so.bak
       ln -s /opt/OpenBLAS/lib/libopenblas.so libRblas.so
+* 4.添加到环境变量
 
+      vim /etc/profile
+      增加行
+      export PATH=/opt/R3.5/Install/bin:$PATH
+      source /etc/profile
 ### htop
 * 1.下载
 
