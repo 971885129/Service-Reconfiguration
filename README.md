@@ -78,17 +78,35 @@
       官网下载 ：https://mirrors.tuna.tsinghua.edu.cn/CRAN/
       wget https://mirrors.tuna.tsinghua.edu.cn/CRAN/src/base/R-3/R-3.5.1.tar.gz
       tar -xzf R-3.5.1.tar.gz
+* 2.安装
+
       mkdir Install && cd Install
       ../R-3.5.1/configure --enable-R-shlib  --with-blas="-lopenblas" --with-lapack 
       make
       make isntall
-      #更改R的blas库链接
+* 3.更改R的blas库链接
+
       cd lib
       mv libRblas.so libRblas.so.bak
       ln -s /opt/OpenBLAS/lib/libopenblas.so libRblas.so
-*
-*
-*
+
+### htop
+* 1.下载
+
+      下载地址：http://hisham.hm/htop/releases/
+      wget hisham.hm/htop/releases/2.2.0/htop-2.2.0.tar.gz
+      tar -xzf htop-2.2.0.tar.gz
+* 2.安装
+
+      cd htop-2.2.0/
+      mkdir Install && cd Install
+      ../configure --prefix="/opt/HTOP/htop-2.2.0/Install"
+      make
+      make install
+* 3.建立软连接
+
+      ln -s /opt/HTOP/htop-2.2.0/Install/bin/htop /usr/bin/
+
 
 
 
