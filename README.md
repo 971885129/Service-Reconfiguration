@@ -63,6 +63,35 @@
 ### python
 ### yum
 ### 生信软件
-### R
 ### openBLAS
+* 1.下载
+
+      官网： http://www.openblas.net/ 下载后解压
+* 2.安装
+
+      make 
+      make install
+      默认安装地址/opt/OpenBLAS
+### openblas-R
+* 1.下载
+
+      官网下载 ：https://mirrors.tuna.tsinghua.edu.cn/CRAN/
+      wget https://mirrors.tuna.tsinghua.edu.cn/CRAN/src/base/R-3/R-3.5.1.tar.gz
+      tar -xzf R-3.5.1.tar.gz
+      mkdir Install && cd Install
+      ../R-3.5.1/configure --enable-R-shlib  --with-blas="-lopenblas" --with-lapack 
+      make
+      make isntall
+      #更改R的blas库链接
+      cd lib
+      mv libRblas.so libRblas.so.bak
+      ln -s /opt/OpenBLAS/lib/libopenblas.so libRblas.so
+*
+*
+*
+
+
+
+
+
     
