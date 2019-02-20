@@ -86,7 +86,7 @@
       mkdir Install && cd Install
       ../R-3.5.1/configure --enable-R-shlib  --with-blas="-lopenblas" --with-lapack 
       make
-      make isntall
+      make install
 * 3.更改R的blas库链接
 
       cd lib
