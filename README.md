@@ -98,6 +98,22 @@
       增加行
       export PATH=/opt/R3.5/Install/bin:$PATH
       source /etc/profile
+* 5.批量安装R包
+
+      #保存已有的R包列表
+      tmp = installed.packages()
+      installedpackages = as.vector(tmp[is.na(tmp[,"Priority"]), 1])
+      save(installedpackages, file="/media/sdb/user/wxm/software/R/installed_packages.rda")
+      
+      #安装CRAN R包
+      load("~/Downloads/installed_packages.rda")
+      for (count in 1:length(installedpackages)) install.packages(installedpackages[count])
+      
+      #安装bioconductor R包
+      
+
+
+
 ### htop
 * 1.下载
 
