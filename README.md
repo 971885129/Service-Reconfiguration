@@ -132,6 +132,21 @@
       ln -s /opt/HTOP/htop-2.2.0/Install/bin/htop /usr/bin/
 
 
+## 卸载硬盘
+* 检测硬盘是否被占用
+
+      fuser -cu /media/sdb
+* 删除占用程序
+
+      fuser -ck /media/sdb
+* 卸载
+
+      unmount /media/sdb
+* 查看所有存储设备
+
+      fdisk -l 
+
+
 
 
 
