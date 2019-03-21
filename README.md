@@ -44,6 +44,26 @@
 * 3.设置密码
  
       passwd username
+   * 用户自行设置密码，报错
+   
+            Authentication token manipulation error
+   * 可能问题1.密码文件权限问题
+   
+            查看/etc/passwd /etc/shadow文件的权限中是否有i
+            lsattr /etc/passwd /etc/shadow
+            若有则修改
+            chattr -i /etc/shadow
+            chattr -i /etc/passwd
+   * 可能问题2./usr/bin/passwd文件权限问题
+   
+            用户自行修改权限需通过/usr/bin/passwd文件设置，该文件权限出问题会导致报错
+            修改权限chmod 4755 /usr/bin/passwd
+   
+   * 可能问题3
+   
+   * /etc/passwd 存放账户信息
+   * /etc/shadow  存放用户密码
+   * /etc/group 用户组信息
 * 4.删除用户
 
       userdel username
@@ -145,8 +165,10 @@
 * 查看所有存储设备
 
       fdisk -l 
+## 特殊权限设置
+SUID，表现在文件所有者的执行权限位上显示为s。SUID权限只对二进制文件有效，s权限的具体含义是，当某个文件的拥有者执行权限位是s的话，其他用户执行这个二进制时，在执行期间，用户获得文件拥有者的权限。
 
-
+      增加SUID权限可以通过chmod 4xxx <文件名> 来进行
 
 
 
