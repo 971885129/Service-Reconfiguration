@@ -66,7 +66,10 @@
    * /etc/group 用户组信息
 * 4.删除用户
 
+      仅删除用户
       userdel username
+      删除用户及home目录下文件
+      userdel -r username 
 * 5.设置用户工作目录属主和属组
 
       #修改/media/user/wxm/目录及目录下的所有文件的属主为wxm,属组为manage
